@@ -47,7 +47,7 @@ class Boy:
         self.x += 5
         pass
 
-class Ball:
+class MiniBall:
     def __init__(self):
         self.image = load_image('ball21x21.png')
         self.x = random.randint(0, 800)
@@ -61,6 +61,22 @@ class Ball:
         if self.y > 25:
             self.y -= self.speed
         pass
+
+class BigBall:
+    def __init__(self):
+        self.image = load_image('ball41x41.png')
+        self.x = random.randint(0, 800)
+        self.y = 599
+        self.speed = random.randint(1, 10)
+
+    def draw(self):
+        self.image.draw(self.x, self.y)
+
+    def update(self):
+        if self.y > 25:
+            self.y -= self.speed
+        pass
+
 
 
 def reset_world():
@@ -78,8 +94,10 @@ def reset_world():
     team = [Boy() for _ in range(11)]
     world += team
 
-    balls = Ball()
-    world += [Ball() for _ in range(20)]
+    miniballs = MiniBall()
+    bigballs = BigBall()
+    world += [BigBall() for _ in range(20)]
+    world += [MiniBall() for _ in range(20)]
     pass
 
 

@@ -58,7 +58,7 @@ class MiniBall:
         self.image.draw(self.x, self.y)
 
     def update(self):
-        if self.y > 25:
+        if self.y > 60:
             self.y -= self.speed
         pass
 
@@ -73,7 +73,7 @@ class BigBall:
         self.image.draw(self.x, self.y)
 
     def update(self):
-        if self.y > 25:
+        if self.y > 60:
             self.y -= self.speed
         pass
 
